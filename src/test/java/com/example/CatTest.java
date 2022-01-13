@@ -1,5 +1,6 @@
 package com.example;
 
+import org.junit.Before;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.mockito.Mock;
@@ -16,7 +17,6 @@ public class CatTest {
     @Mock
     Feline feline;
 
-
     @Test
     public void getSound() {
         Cat cat = new Cat(feline);
@@ -28,8 +28,9 @@ public class CatTest {
     @Test
     public void getFood() throws Exception {
         Cat cat = new Cat(feline);
-        List<String> actualList = cat.getFood();
         List<String> expectedList = List.of("Животные", "Птицы", "Рыба");
+        Mockito.when(feline.eatMeat()).thenReturn(expectedList);
+        List<String> actualList = cat.getFood();
         assertEquals(expectedList, actualList);
 
     }
