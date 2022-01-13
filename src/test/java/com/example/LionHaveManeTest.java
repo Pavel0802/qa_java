@@ -1,15 +1,21 @@
 package com.example;
 
+import org.junit.Before;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.junit.runners.Parameterized;
 import org.mockito.Mock;
+import org.mockito.MockitoAnnotations;
 
 import static org.junit.Assert.assertEquals;
 
 @RunWith(Parameterized.class)
 public class LionHaveManeTest {
 
+    @Before
+    public void setup(){
+        MockitoAnnotations.openMocks(this);
+    }
     private final String sex;
     private final boolean hasMane;
 
@@ -23,6 +29,7 @@ public class LionHaveManeTest {
         return new Object[][]{
                 {"Самец", true},
                 {"Самка", false},
+
         };
     }
 

@@ -2,7 +2,7 @@ package com.example;
 
 import java.util.List;
 
-public class Lion  {
+public class Lion {
 
     boolean hasMane;
     Feline feline;
@@ -17,9 +17,6 @@ public class Lion  {
             throw new Exception("Используйте допустимые значения пола животного - самец или самка");
         }
     }
-
-
-
 
     public int getKittens() {
         return feline.getKittens();
