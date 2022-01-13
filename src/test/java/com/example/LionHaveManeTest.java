@@ -10,22 +10,22 @@ import static org.junit.Assert.assertEquals;
 @RunWith(Parameterized.class)
 public class LionHaveManeTest {
 
-    private String sex;
-    private boolean hasMane;
+    private final String sex;
+    private final boolean hasMane;
 
-    public LionHaveManeTest (String sex, boolean hasMane){
-         this.sex = sex;
-         this.hasMane = hasMane;
-         }
+    public LionHaveManeTest(String sex, boolean hasMane) {
+        this.sex = sex;
+        this.hasMane = hasMane;
+    }
 
     @Parameterized.Parameters
-    public static Object [][] haveMane (){
-    return new  Object[][]{
-            {"Самец", true},
-            {"Самка", false},
-            {"", false},//должен выдать Exception: Используйте допустимые значения пола животного - самец или самка
-    };
+    public static Object[][] haveMane() {
+        return new Object[][]{
+                {"Самец", true},
+                {"Самка", false},
+        };
     }
+
     @Mock
     Feline feline;
 
